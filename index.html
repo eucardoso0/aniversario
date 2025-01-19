@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário</title>
+    <!-- Biblioteca para o efeito de confete -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .page1 {
+            background-color: #ffe4e1; /* Rosa fraco */
+        }
+
+        .page2 {
+            background-color: #e6e6fa; /* Roxo fraco */
+            padding: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #ff1493;
+        }
+
+        .emojis {
+            font-size: 40px;
+            margin: 20px 0;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        h1, p {
+            margin: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ff1493;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .extra-message {
+            font-size: 16px;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Página 1 -->
+    <div id="page1" class="page page1" onclick="startConfetti()">
+        <h1>Feliz Aniversário, Meu Amor!</h1>
+        <p>Hoje é um dia muito especial, e eu quero te lembrar o quanto você é incrível.</p>
+        <button class="button" onclick="showPage2()">Veja sua mensagem</button>
+    </div>
+
+    <!-- Página 2 -->
+    <div id="page2" class="page page2 hidden">
+        <div class="emojis">🎉🎈🎉🎈</div>
+        <div class="image-container">
+            <img src="img/Imagem do WhatsApp de 2025-01-14 à(s) 11.28.09_f17f2f59.jpg" alt="Foto de nós dois">
+            <img src="img/Imagem do WhatsApp de 2025-01-14 à(s) 11.28.09_fdb2b1a6.jpg" alt="Foto de nós dois">
+            <img src="img/Imagem do WhatsApp de 2025-01-14 à(s) 11.28.08_9671f4da.jpg" alt="Foto de nós dois">
+        </div>
+        <p>Você é a luz da minha vida, a razão do meu sorriso e a pessoa mais especial do mundo para mim.</p>
+        <p class="extra-message">Meu amor, hoje é o seu dia, mas o presente é todo meu por ter você na minha vida. Você é minha alegria, meu porto seguro e a razão de cada um dos meus sorrisos. Que seu aniversário seja tão especial quanto você é pra mim. Parabéns, meu amor! Te amo mais do que palavras podem expressar. ❤️🎉</p>
+        <div class="emojis">🎉🎈🎉🎈</div>
+    </div>
+
+    <script>
+        function startConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        function showPage2() {
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.remove('hidden');
+        }
+
+        // Dispara o confete ao carregar a página
+        window.onload = startConfetti;
+    </script>
+</body>
+</html>
+
